@@ -43,4 +43,14 @@ public class Journal
         Console.WriteLine("Journal loaded Successfully.");
         
     }
+    public void SearchEntries(string Keyword)
+    {
+        foreach (Entry entry in _entries)
+        {
+            if (entry._entryText.Contains(Keyword, StringComparison.OrdinalIgnoreCase))
+            {
+                entry.Display();
+            }
+        }
+    }
 }

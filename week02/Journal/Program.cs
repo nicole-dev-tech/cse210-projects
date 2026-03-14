@@ -1,3 +1,9 @@
+// EXCEEDING REQUIREMENTS:
+// I added a "Search Entries" feature to the journal program.
+// This allows the user to enter a keyword and the program will display
+// all journal entries that contain that word in the entry text.
+
+
 using System;
 
 class Program
@@ -9,15 +15,16 @@ class Program
 
         int choice = 0;
 
-        while (choice != 5)
+        while (choice != 6)
         {
             Console.WriteLine("\nJournal Menu");
             Console.WriteLine("1. Write new entry");
             Console.WriteLine("2. Display journal");
             Console.WriteLine("3. Save journal");
             Console.WriteLine("4. Load journal");
-            Console.WriteLine("5. Quit");
-            Console.WriteLine("Choose an option:");
+            Console.WriteLine("5.Search entries");
+            Console.WriteLine("6. Quit");
+            Console.Write("Choose an option:");
 
             choice = int.Parse(Console.ReadLine());
 
@@ -58,6 +65,12 @@ class Program
                 
             }
             else if (choice == 5)
+            {
+                Console.WriteLine("Enter Keyword to search: ");
+                string keyword = Console.ReadLine();
+                journal.SearchEntries(keyword);
+            }
+            else if (choice == 6)
             {
                 Console.WriteLine("Goodbye!");
             }
