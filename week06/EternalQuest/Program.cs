@@ -1,3 +1,32 @@
+// EXCEEDING REQUIREMENTS
+// 1. Added a ChecklistGoal type:
+//    - This goal allows users to complete an activity multiple times.
+//    - It tracks progress (_currentCount vs _targetCount).
+//    - A bonus is awarded when the goal is fully completed.
+//    - This introduces more advanced gamification compared to simple one-time goals.
+//
+// 2. Persistent Storage System:
+//    - Goals and total score can be saved to and loaded from a file (goals.txt).
+//    - This allows the user to continue their progress across multiple sessions,
+//      which improves usability and realism of the application.
+//
+// 3. Polymorphism and Extensibility:
+//    - The program uses an abstract base class (Goal) with multiple derived classes.
+//    - A Deserialize method dynamically reconstructs goal types from file data.
+//    - This design makes it easy to add new goal types in the future.
+//
+// 4. Score Tracking System:
+//    - A global score is maintained and updated whenever goals are recorded.
+//    - Different goal types reward points differently, adding variety to gameplay.
+//
+// 5. Improved User Feedback:
+//    - Each goal displays a clear status indicator:
+//         [ ] = incomplete
+//         [X] = complete
+//         [∞] = eternal goal
+//    - Checklist goals also show progress (e.g., Completed 2/5).
+//
+
 class Program
 {
     static List<Goal> goals = new List<Goal>();
